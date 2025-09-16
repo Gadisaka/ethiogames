@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", monospace;
+  background: linear-gradient(135deg, #1e2a4a 0%, #2c3e50 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .game-button {
+    @apply bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-full px-8 py-4 text-lg font-semibold border-2 border-gray-600 transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .game-button.available {
+    @apply hover:from-blue-600 hover:to-blue-700 hover:border-blue-500;
+  }
+
+  .coming-soon-badge {
+    @apply text-yellow-400 text-sm font-bold ml-4;
+  }
+
+  .social-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110;
+  }
+}
