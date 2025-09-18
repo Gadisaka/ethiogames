@@ -3,7 +3,13 @@ import React from "react";
 const GameItem = ({ game }) => {
   const handleGameClick = () => {
     if (game.available && game.url) {
-      window.open(game.url, "_blank");
+      // Use Telegram WebApp API instead of window.open
+      if (window.Telegram && window.Telegram.WebApp) {
+        window.Telegram.WebApp.openLink(game.url, { try_instant_view: true });
+      } else {
+        // Fallback if Telegram API is not available (open in same tab)
+        window.location.href = game.url;
+      }
     }
   };
 
@@ -11,7 +17,6 @@ const GameItem = ({ game }) => {
     <div className="flex items-center justify-between">
       {/* Game Icon */}
       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-lg shadow-md">
-        {/* {game.icon} */}
         <img src={game.icon} alt="icon" />
       </div>
 

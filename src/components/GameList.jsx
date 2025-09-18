@@ -14,14 +14,13 @@ const GameList = () => {
       name: "ETHIO LUDO",
       icon: ludo,
       available: true,
-      url: "https://play.ludo.ethiostargames.com/", // Adjust this to your ludo game URL
+      url: "https://play.ludo.ethiobingo.net/", // Adjust this to your ludo game URL
     },
     {
       id: "bingo",
       name: "ETHIO BINGO",
       icon: bingo,
-      available: true,
-      url: "https://ethiobingo.net/", // Add bingo game URL when available
+      available: false,
     },
     {
       id: "latlat",
